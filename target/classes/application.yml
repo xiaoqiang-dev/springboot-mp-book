@@ -1,0 +1,27 @@
+# 配置端口号
+server:
+  port: 8080
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cockroach?characterEncoding=UTF-8&unicode=true&serverTimezone=UTC
+    username: root
+    password: 999999
+  # 绑定工程名称
+  application:
+    name: springboot-mp-book
+  # 关闭缓存
+  thymeleaf:
+    cache: false
+
+mybatis-plus:
+  # 日志打印
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 逻辑删除
+  global-config:
+    db-config:
+      logic-delete-field: flag  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
